@@ -1,7 +1,0 @@
-// var mainObject = gltf.scene.clone(); // Clone the main object
-    // objects.push(mainObject); // Add the main object to the objects array
-    // mainObject.position.set(0,0,-35);
-    // mainObject.scale.set(0.25,0.25,0.25);
-    // mainObject.rotation.y = Math.PI;
-    // scene.add(mainObject); // Add the main object to the scene
-    //  // Create a rectangle
