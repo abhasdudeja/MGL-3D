@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D model Loader</title>
@@ -23,7 +24,18 @@
         border: none;
         cursor: pointer;
       }
-      
+      #controls {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        max-width: 400px;
+      }
+  
+      #controls p {
+        margin: 8px 0;
+      }
       /* Add spacing between the buttons */
       button:not(:last-child) {
         margin-right: 15px;
@@ -70,22 +82,37 @@
       }
       canvas.webgl {
         width: 0%;
-        height: 0%;
+        height: 0%; 
         display: block;
       }
-      
+      #infoModal {
+        display: none;
+      }      
+     
 		</style>
   </head>
   <body>
-    <button id="loadObjectsBtn">Default Layout</button>
-<button id="newlayoutBtn">5 X 2 Layout</button>
-    <div id="myModal" class="modal">
+      <button id="loadObjectsBtn">Default Layout</button>
+      <button id="newlayoutBtn">5 X 2 Layout</button>
+      <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <label for="numVehicles">Number of Vehicles:</label>
         <input type="number" id="numVehicles" />
         <button id="submitBtn">Submit</button>
-        <!-- <p id="remainderText"></p> -->
+      </div>
+    </div>
+    <button id="infoBtn"><i class="fas fa-info-circle"></i></button>
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="hideInfoModal()">&times;</span>
+        <h3>Keyboard Controls</h3>
+        <p>w ~ move forward</p>
+        <p>a ~ move left</p>
+        <p>d ~ move right</p>
+        <p>s ~ move backward</p>
+        <p>right click ~ pan</p>
+        <p>left click ~ change camera position</p>
       </div>
     </div>
     <canvas class="webgl"></canvas>
